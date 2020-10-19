@@ -1,0 +1,26 @@
+Package: CSPvCFPAfrica
+Title: Relationship between CFP and CSP in Africa
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Akua",
+             family = "Oppong-Nkrumah",
+             role = "aut",
+             email = "apeprahyeboah@gmail.com"),
+      person(given = "Oduro",
+             family = "Oppong-Nkrumah",
+             role = c("cre", "aut"),
+             email = "locco.el@gmail.com"))
+Description: | Examine the relationship between Corporate Financial Performance
+  and Corporate Social Performance in Africa
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Imports: 
+    data.table
+Depends: R (>= 2.10)

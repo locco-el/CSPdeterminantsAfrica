@@ -1,0 +1,187 @@
+---
+title: "c4_csp_dets"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{paper}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(CSPvCFPAfrica)
+```
+
+# Abstract {-}
+
+# Country and Firm Level Determinants of Corporate Social Performance in Africa
+
+### Introduction
+
+
+### Methods
+
+#### Study Population
+
+Our study population was made up of listed sub-Saharan Africa companies. As previously mentioned, we elected to study companies from the sub-Saharan African context because of the unique business and social environment there. This region has some of the poorest countries in the world and is also incredibly socio-culturally diverse. 
+[DISCUSS AFRICAN BUSINESS CLIMATE]
+
+#### Data
+
+We used secondary data from financial statements of the selected companies published from 2014 to 2018. Such financial reports have been found to be reliable and comprehensive for listed firms due to auditing requirements. (Bozzolan et al., 2003; Abeyekera, 2007; Guthrie et al.,2006; Sobhani et al., 2009; Yi and Davey, 2010; Joshi et al., 2010; Menassa, 2010;Saleh et al., 2010; Samkin and Schneider, 2010).
+
+We sampled firms listed on the two largest stock markets by market capitalisation in each of the three geographical regions of sub-Saharan Africa--i.e. West Africa, East Africa and Southern Africa respectively. Companies were included based on the availability and accessibility of published annual reports for the study period (2014 to 2018). In all, 239 companies were included resulting in a total of 1195 reporting-years of data. Financial companies were excluded because they are bound by a unique set of regulations and use a different annual reporting framework. Also, we found that some of the CSP measures we analyzed did not apply to them (Kansal and Singh, 2012)
+
+- Country of listing may be different from country of operation
+
+- Sector:
+  - Primary implies agriculture, extractive etc. Such companies face greater pressure to perform CSR 
+
+Covariates for Paper 2
+- company age (incorporation age, listing age): include both
+- Sector: primary secondary tertiary
+- Firm size (ln(total assets))
+
+Interaction variables
+- Presence of corporate social responsibility function
+
+#### Statistical analysis
+
+regress CSP on lagged CSP, 
+non linearity in relationship
+
+
+### Results
+
+```{r setup2, include=F}
+
+library(CSPAfricaData)
+library(lme4)
+library(lmerTest)
+library(modelsummary)
+library(broom.mixed)
+library(sandwich)
+library(huxtable)
+library(desctable)
+library(dplyr)
+library(data.table)
+library(gtsummary)
+library(labelled)
+library(ggfortify)
+library(ggplot2)
+
+```
+
+```{r load and explore reg data, include=F}
+# load regression data
+
+reg_data <- CSPAfricaData::reg_data
+pca_ind_scores <- CSPAfricaData::pca_ind_scores
+
+names(reg_data)
+str(reg_data)
+
+str(pca_ind_scores)
+
+# Add first component scores to dataset
+reg_data[, csp_score := pca_ind_scores
+         ][, social_committee := factor(social_committee, 
+                                        labels = c('No', 'Yes'))]
+
+# also, delete tobin's q and listing age o/a of excessive numbers of missing values
+# specifically, all companies from South Africa are missing for tobin's q
+reg_data <- select(reg_data, 
+                   -c(lag_return_on_assets, lag_return_on_equity))
+  
+  
+
+# summarize data
+lapply(reg_data, summary)
+
+```
+
+```{r tab1: descriptive statistics, echo=F, results='asis'}
+
+reg_data %>% 
+  set_variable_labels(
+    listing_age = 'Listing age',
+    incorp_age = 'Incorporation age',
+    reporting_year = 'Report year',
+    csp_score = 'CSP score',
+    social_committee = 'Has social/ethics committee'
+  ) %>% 
+  set_value_labels(
+    social_committee = c(Yes = 1, No = 0)
+  ) %>% 
+  tbl_summary -> sumtable
+  
+sumtable %>% 
+  as_hux_table %>% 
+  set_header_rows(1, TRUE) %>% 
+  style_headers(bold = TRUE, text_color = "grey40") %>% 
+  set_caption('Descriptive Statistics') %>% 
+  theme_article()
+
+```
+
+```{r fit models, include=F, results='asis'}
+
+firm_covs <- c('reporting_year', 'Sector', 'incorp_age', 'social_committee',
+               'Country')
+country_covs <- c('1')
+adj_covs <- paste(firm_covs, collapse = ' + ')
+country_lev <- paste0(' + (', country_covs, ' | Country)')
+
+unadj_models <- paste('csp_score', 
+                      paste0(firm_covs, country_lev), sep = ' ~ ')
+
+adj_models <- paste('csp_score', 
+                      paste0(adj_covs, country_lev), sep = ' ~ ')
+
+unadj_fits <- lapply(unadj_models, lmer, data = reg_data)
+
+adj_fits <- lapply(adj_models, lmer, data = reg_data)
+
+```
+
+```{r tab2 unadjusted models, results='asis'}
+library(sjPlot)
+lapply(adj_fits, export_summs, error_pos = 'right', 
+       ci_level = .95, error_format = "({conf.low}, {conf.high})") 
+
+lapply(adj_fits, function(x) huxtable(as.data.frame(summ(x)$rcoeftable)))
+
+
+```
+
+```{r tab3 adjusted models, results='asis'}
+library(jtools)
+export_summs(adj_fits, )
+
+```
+
+## Discussion
+
+- Summary of results
+
+- Interpretation of results
+
+- Results in the context of existing literature
+
+- Implications of results
+
+-- Literature
+-- Policy
+-- Practice
+
+- Limitations
+
+- Future directions
+
+## Conclusion

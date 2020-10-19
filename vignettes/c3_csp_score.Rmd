@@ -1,0 +1,353 @@
+---
+title: "c3_csp_score"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{c3_csp_score}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(CSPvCFPAfrica)
+```
+
+
+# Abstract {-}
+
+
+# Introduction
+
+This study answers the question “how should Corporate Social Performance (CSP) be assessed for listed firms in Sub-Saharan Africa?”. CSP is a  quantitative measure of Corporate Social Responsibility (CSR) activity. Researchers have discussed CSR from various perspectives since its inception about five decades ago . However, there is no consensus on the definition, principles and constructs of CSR (Crane et al., 2008). As many as thirty seven different definitions of CSR were identified by Dahlsrud (2008). This figure is likely an underestimation because it does not include some academically derived constructs (Carroll and Shabana 2010).
+
+CSR has been described as the obligation of organizations to be accountable for their environment and to their stakeholders in a manner that goes beyond mere financial aspects (Go¨ssling and Vocht, 2007). It has also been described as ‘actions by companies over and above their legal obligations towards society and the environment’ (European commission, 2011). Various dimensions of CSR have been proposed. One of the earliest frameworks of CSR is the CSR pyramid by Carrol (1979). The CSR pyramid states that CSR encompasses the economic, legal, ethical, and discretionary expectations that society has of organizations at a given point in time’ (Carrol 1979, p. 500). On the other hand, the stakeholder theory defines the dimensions of CSR according to the stakeholders of the organization that is, customers, employees, shareholders, society, environment and media etc (Turker, 2009; Decker, 2004)
+
+The vague nature of the CSR concept hinders the proper framing of CSR studies (Schulze and Gedajlovic, 2010). A clear definition is essential for meaningful empirical analyses and to build a solid theoretical framework (Perez et al., 2007). Additionally, the use of different definitions makes it difficult to compare the empirical results from different studies. Problems such as these continue to limit the understanding of the strategic implications of CSR. The lack of agreement on a definition of CSR suggests the need for further analysis in order to systematically study the elements that form its core. 
+
+One perspective of CSR that is still contentious is its measurement. The concept of CSR is not a variable and cannot be measured. However, CSR can be operationalised as measurable constructs referred to as Corporate Social Performance(CSP). CSP can be defined as ‘‘a construct that emphasizes a company’s responsibilities to multiple stakeholders, such as employees and the community at large, in addition to its traditional responsibilities to economic shareholders’’ (Turban and Greening 1996,p. 658). Also, CSP is “a business organization’s configuration of principles of social responsibility, processes of social responsiveness, and policies, programs,and  observable outcomes as they relate to the firm’s societal relationships”. Wood (1991, p. 693). 
+
+Finding an appropriate measure for corporate social performance is important to academia and industry. Investors rely on CSP measures to make investment decisions. Mechanisms such as socially responsible investing (SRI) screens are used to determine which firms are invested in, based on their corporate social engagement profile (Chatterji et al. 2009, Delmas and Doctori-Blass 2010). Researchers measure CSP in order to examine its effect and antecedents. Existing methods of measuring CSP are not adequate. CSP is measured as either a one-dimensional construct or multi-dimensional construct  (Maignan and Ferrell, 2000). One-dimensional constructs usually comprise legal and philanthropic responsibilities (Marin and Ruiz, 2007; Lichtenstein et al., 2004). The limitation of this method is that they represent only one dimension (Maignan and Ferrell, 2000) and thus cannot represent the full breadth of the CSP construct (i.e., the validity problem). It makes comparing and unifying different studies extremely difficult (Rowley and Berman (2000). Multi-dimensional CSP measurements are usually done using expert evaluation like reputational indices or scales (McGuire et al., 1988), content analysis of publications (Wolfe and Aupperle, 1991) or survey methodologies (Clarkson 1995). Although these methods have been employed in literature, they still have their draw backs. Reputational indices are compiled by private firms that have their own agendas and do not necessarily use scientific methods (Graafland, Eijffinger, & SmidJohan, 2004; Unerman, 2000). Also, they usually merely provide aggregated CSR scores even though researchers may sometimes be only interested in certain CSR dimensions (Galant and cadez, ). The content analysis and survey methodologies can suffer from objectivity issues as the scope is determined by the researcher. 
+
+One main challenge of CSP measurement is that the measures used are are not representative.Existing CSP measures center on the context of developed countries. The concept of CSR originated in the Global North. Thus definitions and constructions of CSR come from concerns of investors, companies, campaign groups and consumers based in the world’s wealthiest countries. There is little contribution from middle to low-income countries (Ward, Wilson and Zarsky, 2007; Frederick, 2006; Cavrou, 1999). However globalization, international trade and aid have caused the CSR concept to spread to other social and economic contexts. As institutional differences exists between developed and developing countries, the nature, generation and consequence of CSR perspectives, principles, processes and ultimately performance are different for developed and developing countries. Businesses in developing countries contend with uncertain political, economic and institutional conditions, rudimentary factors of production, and inadequate market systems (e.g. Fornes and Butt-Philip, 2009; Guillen, 2000; Hoskisson et al., 2000; Khanna and Palepu, 2000; Peng, 2003). The unique historical, social and economic circumstances of developing countries call  for a nuanced approach to studying CSR and CSP in these contexts (Blowfield and Frynas 2005; Idemudia 2011; Newell and Frynas 2007). 
+
+One region which has been neglected in CSR and CSP studies is  Africa (Dartey-Baah & Amponsah-Tawiah, 2011; Kivuitu et al., 2005; Kolk & Lenfant, 2010; Phillips, 2006; Visser, 2006a). A substantial number of studies have addressed the state of CSR in other developing regions such as Latin America (e.g., Haslam, 2004; Logsdon et al., 2006; Paul et al., 2006; Peinado-Vara, 2004, 2006; Prieto-Carrn, 2006; Schmidheiny, 2006) and  Asia (e.g., Baughn, Bodie, & McIntosh, 2007; Birch & Moon, 2004; Chambers, Chapple, Moon, & Sullivan, 2003; Chapple & Moon, 2005; Higgins & Debroux, 2009; Kolk et al., 2010; Ramasamy & Woan Ting, 2004; Welford, 2004). The low interest in Africa is attributed to challenges faced while studying the region. The unstable governance  structures, prevalence of conflicts and power struggles, ethnicity and religion are impediments in conducting studies in the region. (Kolk and Lefant, 2010). Baskin, (2006) and Visser, (2006) have suggested that CSR in Africa is weaker than other developing regions and this contributes to the low interest in the region. Further, research in Africa is plagued by difficulties in accessing relevant and reliable data (Fifka et al (2018), Upataa et al 2018). Africa has small sized firms compared to those on other continents so ranking organizations (such as Fortune 250 and 500) do not provide data on them.  
+
+Despite these factors, studies in institutionally constrained environments, such as Africa, are important as they present some interesting research questions (Campbell, 2007; Matten and Moon, 2008). However, any such endeavour in Africa must take into consideration, the high levels of poverty, illiteracy, corruption, weak national institutions and political instability into consideration. Further, Africa has  values-based traditional philosophies such as African humanism (Ubuntu).These philosophies make CSR in the region unique (Visser (2005). Therefore, replicating main stream CSP measures in Africa maybe inappropriate. Following from these arguements, we contribute to knowledge by developing a context specific CSP measure for listed firms in sub-saharan Africa, using the PCA method. We futher examine which variables contribute to the measure and how the measure varies by sector and between countries. 
+
+
+
+## Theoretical framework
+
+### Corporate social responsibility?
+
+Corporate social responsibility has become a modern-day corporate mantra, attracting substantial research attention in recent times. Despite the interest in CSR, there is no consensus on the concept (Wahba & Elsayed, 2015 Maqbooland Zameer , 2017). Wood (2010, p. 50) describes it as “controversial, fluid, ambiguous and difficult to research”. CSR is a social construct that changes across time and place (Maqbooland Zameer , 2017), and has therefore been referred to as a “chameleon concept” (Gond and Moon, 2011).
+
+Discourse on CSR can be traced back to late 1920s (e.g. Barnard, 1938; Kreps, 1940). However, Bowen (1953) is credited with coining the phrase "Corporate Social Responsibility". To Bowen (1953 p.6), CSR refers to "...the obligations of businessmen to pursue those policies, to make those decisions, or to follow those lines of action which are desirable in terms of the objectives and values of our society." Because of the importance of his contribution to the CSR discourse, Bowen has been referred to as  the "Father of Corporate Social Responsibility" (Carroll, 2006: p5) Since then,the concept of CSR has evolved. Dahlsrud (2008) identified thirty seven (37) definitions of CSR in a literature review. Different definitions emphasize different aspects and perspectives of CSR. Carroll (1991) and Lu, Chau, Wang and Pan (2014) describe CSR in-terms of the conduct of firms. According to Carroll (1991) socially responsible firms  conduct their business in an economically profitable, law-abiding, ethical and socially supportive way. lu, chau, wang and pan, (2014) also describe CSR as corporations acting in socially responsible ways.
+
+Some authors have focused on the self-imposed obligations of the firm towards society:  
+
+> CSR is a firm's status and activities with respect to its perceived societal or stakeholders’ obligations (Brown and Dacin, 1997)
+
+> The core essence of CSR is its voluntary feature, which goes beyond statutory obligations, managing externalities, and multiple stakeholders’ orientation. (Belkaoui, Crane et al. (2008)
+
+> According to the concept of CSR, corporations have moral responsibilities toward society that go beyond the goal of simply making profits for their owners and shareholders (Berman et al., 1999).
+  
+CSR has also been explain as a firm expanding their measure of organizational success to include their impact on people and the planet. This perspective is referred to as the triple bottom line: profit, people and planet (Abiodun, 2012; Harpreet, 2009). Connected to this perspective is the multi-stakeholder view which argues that management does not owe a fiduciary duty to only shareholders  but every connected party of the business (Sacconi, 2004, Asif et al., 2013). The current theme of CSR comprises the ideas of stakeholder management (Ashrafi et al., 2020), the triple bottom line (Aguinis and Glavas, 2012) and the creation of shared value (Bansal and DesJardine, 2014; Carroll, 2015). As CSR has evolved, competing and complementary themes such as business ethics, corporate citizenship, and corporate sustainability have come up(Landrum, 2018).
+
+
+### Corporate Social Performance
+
+Corporate Social Performance (CSP) is a term linked to the measurement of CSR. Wood (1991) defines CSP as “a business organisation's configuration of principles of social responsibility, process of social responsiveness, and policies, programs, and observable outcomes as they relate to the firm's societal relationships”. While CSR connotes obligation and accountability to society, CSP  connotes outcomes and results (Carroll 1991). Thus CSP refers to the application of CSR in practice  (Marom, 2006). CSR cannot be measured since it is not a variable but CSP can be operationalised by the use of measurable proxy variables (though challenging to measure) (Van Beurden and Gössling, 2008). Visser (2010) points out that for practical purpose, CSP might be seen as an extension of the concept of CSR, one that focuses on actual results achieved rather than the general nominal notion of businesses' accountability or responsibility to society.
+
+
+#### Assessment of CSP
+
+Constructing a universal measure for CSP has been challenging (Galant and Cadez, 2017). The diverse definitions  (Dahlsrud, 2008) and the multi-dimensional perspectives  (Carroll, 1979) of the CSR concept make it difficult to measure. CSP  has been measured as either one-dimensional or multi-dimensional constructs (reputational indices, content analysis and surveys. One-dimensional constructs focus only on a single dimension of CSR, for example, environmental management or philanthropy. The environmental aspects of CSR have been measured as firms' investment in pollution control (Tang, Fu and Yang, 2019),  carbon-reduction  (Cadez and Czerny, 2016), use of eco-control  (Henri and Journeault, 2010),  toxic waste recycled (Al-tuwaijri, Christensen and Ii, 2004) and compliance with  environmental standards (Dowell, Hart and Yeung, 2000) etc. Philanthropy has been measured as the amount donated to charitable causes  (Lin, Yang and Liou, 2009), increase in philanthropic donations (Carnahan, Agarwal and Campbell, 2010) and public health policies (Naranjo-Gil, Sánchez-Expósito and Gómez-Ruiz, 2016). One dimensional constructs of CSP are accessible but they   cannot represent the full breadth of CSP construct (Galant and Cadez, 2017) and it makes comparisons across studies difficult (chen and dalmas, 2011)
+
+Reputational indices such as the MSC KLD 400 social index and the Fortune magazine reputation index have also been used as a measure of CSP. They have the advantage of  providing ready to use information, (Galant and Cadez, 2017). However, these indices are typically compiled by private firms that have their own agendas and do not necessarily use scientific methods (Graafland, Eijffinger and Smidjohan 2004). Further, rating agencies  provide aggregated CSR scores even though researchers may be interested in specific CSR dimensions. The rating agencies cover limited geographic and economic regions.  Coverage is also limited in terms of the number of firms rated. Typically, indices concentrate on large and publicly listed companies in developed countries. Indices like the MSCI KLD index and the Dow Jones Sustainability index exclude companies operating in industries considered non-sustainable like tobacco, firearms, alcohol, adult entertainment, etc (Adam and Shavit, 2008). In effect, many socially and environmentally responsible companies may not make it onto the list due to their size, geographic location or industry affiliation . 
+
+A content analysis of corporate communication can also be used to measure CSP. Pre determined constructs are extracted from corporate documents such as annual reports and  codified into quantitative scales that can be used in statistical analyses (...............). Content analysis can be done by counting CSP related words or sentences  in corporate reports and publications (Aras, Aybars and Kutlu, 2010)and scoring the level of disclosure. The scores can be binary (0 if  reported, 1 if not reported ) (............) or on a liket scale (for example Yang, Lin, and Chang (2009, Karagiorgos (2010) and Chen, Feldmann, and Tang (2015). The content analysis approach offers flexibility because the researcher can specify which dimensions are used. However, this also has the disavantage of introducing subjectivity into the analysis. Another disadvantage is that any unreported activity will not be included in the analysis. Further, not all reported activities may be accurate. Companies  engage in impressions management to create favourable image of their company through biased reporting (Turker, 2009).This is difficult to detect unless the researcher is knowledgeable about the firms’ socially responsible actions or if the report has been externally audited.
+
+Another means of measuring CSP is a questionnaire-based survey. It is usually used where indicies by rating agencies are not available and content analyses of documents are not possible.In such cases, primary data is collected through a suvey of  knowledgeable respondents. One of the earliest questionnaire surveys concerned with CSR was conducted by Aupperle, Carroll, and Hatfield (1985). The measurement instrument was based on Carroll’s (1979) four components of CSR (economic, legal, ethical and discretionary) and included 80 items, organised in 20 sets of statements (each set contained four statements; one for each component of CSR). Respondents were asked to allocate up to 10 points to each set of statements on CSR. 
+
+For purposes of studying the CSR–CFP link, Rettab, Brik, and Mellahi  (2009) combined different constructs for collecting data on CSR and CFP using a questionnaire. In a more recent study, Gallardo-Vázquez and Sanchez-Hernandez (2014) developed a CSR measurement scale intended to appraise social, economic and environmental dimension of CSR. This method’s main advantage is similar to that of content analysis. It provides great flexibility for the researcher in terms of specifying the dimensions of interest and collecting data about these dimensions. The likely drawback of this method, in addition to general limitations of survey research, is response bias. The bias occurs at two levels. Selection bias will arise as more socially responsible firms are more likely to respond than firms that are less socially responsible (Cadez and Czerny, 2016). Attitude bias is to be expected as respondents may provide socially desirable answers even though their actual behaviour may differ (Epstein and Rejc-Buhovac, 2014). An alternative for overcoming this drawback may be to collect data not only from firms, but also (or solely) from their stakeholders.
+
+###THE CONTEXT-DEPENDENCE OF CSP-INSTITUTIONAL THEORY
+CSR is a social construct and depends on the time and place of its expression. The national and institutional business systems of a setting affect the way CSR is understood and undertake (Pilato, 2020). Thus, CSR in developing countries has been found to be very different in form than CSR in the Global North. CSR in developing countries is characterized by less embedded (Baskin, 2006), less formalized, more sunken and more philanthropic activities (Jamali and Neville 2011; Visser 2008). 
+
+Institutional theory is used to explain "organisations and management practices as a product of social rather than economic pressures "suddaby 2013 p 379). This theory is widely used in management studies because it can illustrate "organisational behaviours that defy economic rationality" (suddaby 2013 p 379). institutional theory and the new institutional environment in order to become legitimate (dimaggio and powell, 1983, meyer and rowan 1977). in CSr studeis, institutional theory has largely been applied to explain how organisations respond to a combination of instituional pressures from different actors within their institutional environment (dimaggio and powell 1983) and to show that csr differs across instituional contexts (brammer et al 2012 akng and moon 2012 matten and moon 2008). According to hall and taylor (1996), neo institutionalism is characterised by three approahces: sociological, historical and rational choices institutionalism. Each is based on different premises and previous studeis of csr in developing countries have relied on different types of instituionalism. 
+
+
+### CSP in Africa
+
+CSR in Africa is unique in both conception and manifestation. It often takes the form of informal philanthropy involving the donation of items such as cash and food, or material support for education, health and sports (Jamali and Neville 2011; Visser 2008; Cheruiyot and Onsando, 2016; Dartey-Baah and Amponsah-Tawiah, 2011; Forstater et al., 2010). What passes for CSR in Africa would likely not be seen as such elsewhere. Cheruiyot and Onsando (2016) CSR is sometimes viewed with skepticism, bordering on cynicism by both businesses and the public. This attitude derives from the historical, cultural, economic and political realities of the African context. 
+
+The socio-cultural environment of Africa does not recognize businesses as entities imbued with the same rights and responsibilities as individuals. The average African does not perceive corporations as accountable for their activities in the same way that individuals are. While this attitude derives in part from cultural norms around personhood, the low levels of education and civic sensibilities that pertain in the region, also contribute to it.
+
+Even where people have had cause to agitate for social responsibility, they have often been powerless to do much about it. The market conditions that pertain in the region constrain the consumer's ability to use their patronage as a tool for lobbying for corporate social engagement. In Africa, the individual customer is not seen as a key stakeholder in most cases because their level of consumption is relatively low. The powerlessness of the consumer is further exacerbated by the dominance of a few large firms in most markets, which limits competition and choice and consequently, the consumer's power to use their consumption as leverage. This situation is worsened by low income levels which constrain the power to substitute one good for another.
+
+Most African economies are fundamentally, even now, primary economies. They were set up by colonial powers to facilitate the exploitation of their natural resources.  The few actors in the secondary and tertiary sectors tend to be foreign entities and most manufactured good are imported. Thus CSR is Africa is to a large extent influenced by the interest of foreigners. In such circumstances (where goods produced locally are mainly for export and goods consumed are mainly imported), the consumer can seldom use their consumption as leverage since the targeted corporations are often outside their reach. Consequently corporations target CSR more towards enhancing their global brand than addressing social issues on the ground. A typical example is the case of communities affected by the pollution generated from mining operations run by large multinational corporations. These companies often turn a deaf ear to complaints from these communities as they lack the means to exert economic pressure on them.  Often, the only advocacy that changes corporate behaviour in Africa is that initiated and championed by individuals and groups outside of the region.  
+
+Again, in Africa, political action often plays a mediating role in the relationship between organisations and the society. This is an artifact of the centralized governance and economic structures established by the colonial masters and perpetuated by subsequent governments. Political actors often take responsibility for what are essentially business decisions. For instance, the establishment of a factory in a community is often touted as an achievement of the incumbent government and used to canvas for votes. As a result, constituents look up to the government and not corporations to address any adverse social and environmental consequences of doing business. For instance, peoples anger at the environmental degradation resulting from the activities of "galamsey" (artisanal mining) operators in Ghana, was directed at the government. The government responded in a manner akin to an actual player in the market rather than an impartial regulator. Due to this peculiar politcal power play, organisations find it expedient to ally with political actors in navigating the corporate social responsibility sphere. Political actors take advantage of this to gain political capital out of the CSR of businesses. Politicians receive political favour with their constituents and in return, businesses gets favour with the politicians. As a result, organisations essentially pay rent to the politicians rather than to society at large.  
+
+
+## Methods
+
+### Data sources
+
+The study employed secondary data from financial statements of selected listed firm in Sub-Saharan Africa from 2014 to 2018. Financial reports are used because of their accessibility,consistency, timeliness and for being reliable as an audited and comprehensive document (Bozzolan et al., 2003; Abeyekera, 2007; Guthrie et al.,2006; Sobhani et al., 2009; Yi and Davey, 2010; Joshi et al., 2010; Menassa, 2010;Saleh et al., 2010; Samkin and Schneider, 2010).
+
+### Study Population
+
+The study population consisted  of listed firms in Sub-Saharan Africa. We focused on sub-saharan Africa because it is still the poorest region in the world and the only one where poverty has increased since 1990 (Fifka et al).  In regions with constrained governance institutions, the private sector often fills in the developmental gap created by the governance lapses (Campbell, 2012). Thus in Sub-Saharan  Africa, corporate contributions often represent a core element of CSR (Visser, 2006b).As the SDG Compass (2015) reckons, the private sector is an essential contributor to CSR in regions where governance institutions are weak.Additionally, listed firms are subject to more political, public and regulatory scrutiny and so are more likely to provide more information through corporate reporting (Watts & Zimmermann, 1986). Again, existng research shows that the bigger a firm is, the more likely it is to engage in CSR activities and report on it (Embong et al., 2012; Siltaoja, 2014), because they have the resources, knowledge, and experience required to do so. 
+
+
+### Sampling
+
+Our sample consists of firms listed on the top two stock markets (accoridng to market capitalisation) in West Africa, East Africa and Sountern Africa respectively. Therefore, six markets were targeted.  The sample was chosen primarily based on the availability of annual reports for the study period (2014 to 2018). A final sample of 239 companies over the five years (1,195 company-years) was achieved. Only non-financial firms were chosen because financial institutions are subject to regulations that affect the nature of their annual reporting framework. Further, some of the variables assessed were found to irrelevant to the financial sector (Kansal and Singh, 2012)
+
+### Data Collection/Extraction
+
+We employed the content analysis methodology in our data collection. As our aim was to provide a context-specific measure of CSP, we gathered data from the communications of the firms. We adopted the measures of the Corporate, Social, Environment, Energy Emmissions (CSEEE) Index developed by Kansal and Singh (2012). The CSEEE was chosen because it was developed in a developing country (India) and provides a comprehensive list of CSR activities (Ninty eight activities in total). The index comprises seven categories of activities: Community development,   Human Resource engagement,  Product/ Service Innovation, Environment, Energy, Emissions of carbon and other harmful gases, and Other CSR activities (See appendix 1).
+
+We employed a parsing algorithm written in python to extract sentences based on the presence a given set of words and/or phrases in order of importance. The words parsed by this algorithm had been extracted into plain text form to improve the speed and efficiency of the algorithm. The extraction was done by the use of Candy PDF tool (a proprietary software). The extracted sentences were then manually checked and graded to ensure that they are consistent with the grading criteria. The annual reports were graded as follows:
+
+  0 if the activity was not reported on
+  1 if the activity was reported on but not quantified in monetary terms
+  2 if the activity was quantified in monetary terms
+  
+The grading process was undertaken by two independent assesors and cross-checked to ensure accuracy. The results were then entered on a pre prepared spread sheet. 
+
+
+### Statistical analysis
+
+#### Principal component analysis
+
+We employed the Principal Component Analysis (PCA) technique in the development of our index. The central idea of PCA is to reduce the dimensionality of  a large number of interrelated variables,while retaining as much as possible the variation present in the data set. PCA transforms the principle components into a new set of variables which are uncorrelated. The first of the resultant variables retains the highest amount of the variation from the original variables (Jolliffe 2003). 
+
+PCA can be done by eigenvalue decomposition or singular value decomposition of a data covariance matrix, usually after standardizing the attribute data. The results of a PCA are usually discussed in terms of component scores (the transformed variable values corresponding to a particular case in the data) and loadings (the weight by which each standardized original variable should be multiplied to get the component score) (Shaw 2003).The uncorrelated property of the components is highlighted by the fact they are perpendicular, i.e. at right angles to each other, which mean the indices are measuring different dimensions in the data (Manly 1994). The weights for each principal component are given by the eigenvectors of the correlation matrix, or if the original data were standardized, the co-variance matrix. The variance () for each principal component is given by the eigenvalue of the corresponding eigenvector.The components are ordered so that the first component (PC1) explains the largest possible amount of variation in the original data, subject to the constraint that the sum of the squared weights is equal to one.
+
+As the sum of the eigenvalues equals the number of variables in the initial data set, the proportion of the total variation in the original data set accounted by each principal component is given by i/n. The second component (PC2) is completely uncorrelated with the first component, and explains additional but less variation than the first component, subject to the same constraint. Subsequent components are uncorrelated with previous components; therefore, each component captures an additional dimension in the data, while explaining smaller and smaller proportions of the variation of the original variables. The higher the degree of correlation among the original variables in the data, the fewer components required to capture common information.
+
+#### Descriptive analysis
+
+- Model Specification
+*all models will be rerun with the exclusion of South Africa
+-Estimation
+
+
+## Results
+
+```{r setup1, include=F}
+library('CSPAfricaData')
+library('desctable')
+library('dplyr')
+library('huxtable')
+library('broom')
+library('tidyr')
+library('corrplot')
+library('ggfortify')
+library('ggplot2')
+library('factoextra')
+library('data.table')
+
+```
+
+
+```{r load and explore data, include=F}
+pca <- CSPAfricaData::pca_data
+
+class(pca_data)
+str(pca_data)
+head(pca_data)
+lapply(pca_data, summary)
+
+```
+
+### Descriptive statistics
+
+```{r tab1: descriptive table, echo=F}
+
+
+desc_stats <- list('Mean' = mean, 'Median' = median, 'SD' = sd, 'Min' = min, 'Max' = max)
+var_labels <- c('Education', 'Public health', 'Arts and culture', 'Economy', 'Agriculture', 'Social activism', 
+                'Workplace safety', 'Workforce diversity', 'Employee training', 'Employee benefits', 
+                'Workplace monitoring', 'Employee satisfaction',
+                'Product information', 'Product quality',
+                'Energy conservation', 'Energy policy', 
+                'Emissions policy', 'Emissions-reduction practices',
+                'Pollution-reduction', 'Conservation activities', 'Environmental Policy', 'Water policy', 
+                'Other CSR activities')
+
+pca_vars <- names(pca_data)[grepl('^n_', names(pca_data))]
+names(var_labels) <- pca_vars
+
+pca_data %>%
+  dplyr::select(all_of(pca_vars)) %>% 
+  desctable(stats = desc_stats, labels = var_labels) %>%
+  as.data.frame %>% 
+  hux %>% 
+  set_header_rows(1, TRUE) %>% 
+  set_col_width(c(.5, .1, .1, .1, .1, .1)) %>% 
+  style_headers(bold = TRUE, text_color = "grey40") %>% 
+  set_caption('Summary of CSR domain variables') %>% 
+  theme_article()
+
+```
+
+```{r fig1: plot pairwise correlations, fig.cap = 'Pairwise correlations for CSR variables', echo=F}
+
+pca_data %>%
+  select(all_of(pca_vars)) %>%
+  data.table::setnames(pca_vars, var_labels) %>% 
+  cor %>%
+  corrplot(type = 'lower', tl.cex = .7)
+
+```
+
+### Results of PCA analysis
+
+```{r pca analysis, include=F}
+
+pca_data %>%
+  select(all_of(pca_vars)) %>%
+  prcomp(center = T, rank. = 10) -> pca_res
+
+```
+
+```{r tab2: percentage of variance explained, echo=F}
+
+pca_res %>%
+  tidy(matrix = 'd') %>%
+  slice(1:10) %>% 
+  mutate(percent = percent*100, cumulative = cumulative*100) %>% 
+  as_hux -> tab
+  
+tab %>% 
+  set_header_rows(1, TRUE) %>% 
+  set_contents(1, 1:4, c("Prin. Comp", "Std. Dev.", "% explained", "Cummulative %")) %>% 
+  style_headers(bold = TRUE, text_color = "grey40") %>% 
+  set_caption('Percentage of variance explained by first 10 principal components') %>% 
+  theme_article()
+
+```
+
+```{r tab3: component loadings, echo=F}
+
+pca_res %>%
+  tidy(matrix = 'v') %>%
+  spread(key = PC, value = value) %>%
+  select(-column) %>%
+  mutate(`CSR domain` = var_labels) %>%
+  relocate(`CSR domain`) %>%
+  hux -> tab
+  
+tab %>% insert_row('', 'Principal component', '', '', '', '', '', '', '', '', '', after = 0) %>%
+  merge_cells(1, 2:11) %>%
+  set_col_width(c(1, rep(.5, 10))) %>% 
+  set_header_rows(1:2, TRUE) %>% 
+  style_headers(bold = TRUE, text_color = "grey40") %>% 
+  set_caption('Loadings of CSR domains on first 10 principal components') %>% 
+  theme_article()
+
+```
+
+```{r fig1: plot PCA component loadings by country, fig.cap='PCA Component Loadings by industrial sector', echo=F}
+
+rownames(pca_res$rotation) <- var_labels
+
+autoplot(pca_res, data = pca_data, colour = 'Sector', loadings = T, 
+         loadings.label = TRUE, loadings.label.size = 3, 
+         frame = T)
+
+```
+
+```{r fig2: plot PCA component loadings by country, fig.cap='PCA Component Loadings by industrial sector', echo=F}
+
+autoplot(pca_res, data = pca_data, colour = 'Country', loadings = T, 
+         loadings.label = TRUE, loadings.label.size = 3, 
+         frame = T)
+
+```
+
+```{r fig3: plot screeplot, fig.cap='Screeplot of PCA components', echo=F}
+
+fviz_eig(pca_res) + ggtitle("") + labs(x = 'Principal component')
+
+```
+
+
+### Predicted PCA scores
+
+```{r predict individual pca scores, , include=F}
+
+res_ind <- get_pca_ind(pca_res)
+pca_ind_scores <- res_ind$coord[, 1]
+
+data.table::setDT(list(pca_score = pca_ind_scores))
+
+#usethis::use_data(pca_ind_scores, overwrite = TRUE)
+
+```
+
+```{r fig4: plot distribution of PCA scores, fig.cap='Predicted Scores from first principal component', echo=F}
+
+ggplot() + aes(pca_ind_scores) + 
+  geom_density() +
+  labs(x = "Predicted Score",
+       y = "Frequency")
+
+```
+
+
+```{r fig5: plot PCA scores by sector, fig.cap='PCA Scores by Sector'}
+
+pca_data$score <- pca_ind_scores
+ggplot(pca_data, aes(score, colour = pca_data$Sector)) + 
+  geom_boxplot() + 
+  labs(x = "Predicted Score",
+       y = "Frequency",
+       colour = "Sector") 
+
+```
+
+```{r fig6: plot PCA scores by country, fig.cap="PCA Scores by Sector"}
+
+ggplot(pca_data, aes(score, colour = pca_data$Country)) + 
+  geom_boxplot() + 
+  labs(x = "Predicted Score",
+       y = "Frequency",
+       colour = "Country") 
+
+```
+
+
+## Discussion
+
+- Summary of results
+
+- Interpretation of results
+
+- Results in the context of existing literature
+
+- Implications of results
+
+-- Literature
+-- Policy
+-- Practice
+
+- Limitations
+
+- Future directions
+
+## Conclusion
+
+
+
+

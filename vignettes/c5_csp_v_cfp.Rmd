@@ -1,0 +1,411 @@
+---
+title: "c5_csp_v_cfp"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{c5_csp_v_cfp}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(CSPvCFPAfrica)
+```
+
+## The Effect of Corporate Financial Performance on Corporate Social Performance in Africa
+
+### Introduction
+
+Whiles the effect of CSP on CFP has been studied extensively, that of CFP on CSP has received much less attention. [note on numbers obtained from a quick search on google scholar.... ]
+There is considerable evidence that CSP affects CFP positively. [..put evidence of positive relationship here..] This aligns with the institutional theory which posits that businesses are integral to the fabric of society and are legitimzed by conforming to its norms and values. In developed economies, CSR is seen as a core business activity and the resources required for its execution are often safeguarded even in times of adversity. For example, a manufacturing concern cannot cut corners on safe disposal of its industrial waste even if it finds itself in financial difficulties. CSR in this context is founded on an ethical foundation.
+
+However, in developing countries, CSR is mostly viewed as philanthropic and consequently, CSP activities are subject to the discretion of business managers. CSR related activities are often considered subordinate to the responsibility of business leaders to their shareholders to maximize returns on their investment. Thus slack resources are necessary to support CSR activities [comment on Slack Resources Theory here]. In this context, CSR activities may be starved of resources in times of adversity. It would thus be expected that, in the business environment of developing countries, CFP would be positively correlated with future CSR expenditure. 
+
+This question has not been well studied in the literature especially in the African business environment. 
+[...describe findings of Danquah et al 2013...]
+
+The effect of CSP on CFP has been shown to be non-linear. Initial expenditure on CSP reduces CFP as there is little return on this early investment. As reputation benefits accrue from the investment in CSR related activities, CFP rises with increase CSP. The benefits of CSP for the bottom-line eventually plateau as the law of diminishing returns kicks in. We have reason to believe that the effect of CFP on CSP may be similarly non-linear in the African context. We expect CSP to increase with increasing CFP up to a point beyond which the curve should plateau or even decrease. When CFP is low, there are few slack resources to invest in CSP. As CFP increases, the availability of more slack resources means that more can be allocated to CSR related activities. Beyond a certain point, however, expenditure on CSR-related activities ceases to increase as the future returns on the associated reputational benefits tend to be limited,  in the African context. In fact, over time, as company reputations become firmly established, their commitment to CSR may wane leading to a potential dip in the curve.
+
+One of the drivers of CSR is the formalization of ethical input into business decision-making. This commonly takes the form of having a board-level ethical oversight structure such as a social and ethics committee. We would expect that the existence of such a structure would tend to accelerate investment in CSR activities and may drive the CFP-CSP curve upwards further than for companies lacking such structure. Thus, the existence of such a structure would tend to moderate the relationship between CFP and CSP.
+
+In this paper, we will examine the effect of CFP on future CSP activity. We will examine the functional form of this relationship with a view to uncovering any inherent non-linearities. We will also explore any possible moderation of this relationship by the existence of a formal ethics function on the board.
+
+#### Theoretical framework
+
+- THE EFFECT OF CFP ON CSP
+- THE CURVILINEAR NATURE OF THE RELATIONSHIP
+- THE MODERATING ROLE OF BOARD LEVEL ETHICS FUNCTION
+
+
+### Methods
+
+#### Study Population
+
+Our study population was made up of listed sub-Saharan Africa companies. As previously mentioned, we elected to study companies from the sub-Saharan African context because of the unique business and social environment there. This region has some of the poorest countries in the world and is also incredibly socio-culturally diverse. 
+[DISCUSS AFRICAN BUSINESS CLIMATE]
+
+#### Data
+
+We used secondary data from financial statements of the selected companies published from 2014 to 2018. Such financial reports have been found to be reliable and comprehensive for listed firms due to auditing requirements. (Bozzolan et al., 2003; Abeyekera, 2007; Guthrie et al.,2006; Sobhani et al., 2009; Yi and Davey, 2010; Joshi et al., 2010; Menassa, 2010;Saleh et al., 2010; Samkin and Schneider, 2010).
+
+We sampled firms listed on the two largest stock markets by market capitalisation in each of the three geographical regions of sub-Saharan Africa--i.e. West Africa, East Africa and Southern Africa respectively. Companies were included based on the availability and accessibility of published annual reports for the study period (2014 to 2018). In all, 239 companies were included resulting in a total of 1195 reporting-years of data. Financial companies were excluded because they are bound by a unique set of regulations and use a different annual reporting framework. Also, we found that some of the CSP measures we analyzed did not apply to them (Kansal and Singh, 2012)
+
+We extracted data from the published reports using a content analysis approach. As our aim was to provide a context-specific measure of CSP, we gathered data from the communications of the firms. We adopted the measures of the Corporate, Social, Environment, Energy Emmissions (CSEEE) Index developed by Kansal and Singh (2012). The CSEEE was chosen because it was developed in a developing country (India) and provides a comprehensive list of CSR activities (Ninty eight activities in total). The index comprises seven categories of activities: Community development,   Human Resource engagement,  Product/ Service Innovation, Environment, Energy, Emissions of carbon and other harmful gases, and Other CSR activities (See appendix 1).
+
+We employed a parsing algorithm written in python to extract sentences based on the presence a given set of words and/or phrases in order of importance. The words parsed by this algorithm had been extracted into plain text form to improve the speed and efficiency of the algorithm. The extraction was done by the use of Candy PDF tool (a proprietary software). The extracted sentences were then manually checked and graded to ensure that they are consistent with the grading criteria. The annual reports were graded as follows:
+
+  0 if the activity was not reported on
+  1 if the activity was reported on
+  2 if the activity was quantified in monetary terms
+  
+The grading process was undertaken by two independent assesors and cross-checked to ensure accuracy. The results were then entered on a pre prepared spread sheet. 
+
+#### Measures
+
+General notes on analysis 
+- Listing age (reporting year - listing year) may be < 0 as some companies reported whiles still private (these companies later got listed)
+  - Consider excluding them or using incorporation age in analysis
+  - including them may violate the condition that only listed companies are studied
+  
+- Multinational/local status implies that company may be required to report based on regulations from parent company's country even if local country regulations do not
+
+- Country of listing may be different from country of operation
+
+- Sector:
+  - Primary implies agriculture, extractive etc. Such companies face greater pressure to perform CSR 
+
+Covariates for Paper 2
+- company age (incorporation age, listing age): include both
+- Sector: primary secondary tertiary
+- Firm size (ln(total assets))
+
+Interaction variables
+- Presence of corporate social responsibility function
+
+#### Statistical analysis
+
+regress CSP on lagged CSP, 
+non linearity in relationship
+
+
+### Results
+
+```{r setup2, include=F}
+
+library(lmtest)
+library(sandwich)
+library(dplyr)
+library(CSPAfricaData)
+library(huxtable)
+library(desctable)
+library(data.table)
+library(gtsummary)
+library(labelled)
+library(ggfortify)
+library(ggplot2)
+
+```
+
+```{r load and explore reg data, include=F}
+# load regression data
+
+reg_data <- CSPAfricaData::reg_data
+pca_ind_scores <- CSPAfricaData::pca_ind_scores
+
+names(reg_data)
+str(reg_data)
+
+str(pca_ind_scores)
+
+# Add first component scores to dataset
+reg_data[, pca_score := pca_ind_scores]
+
+# also, delete tobin's q and listing age o/a of excessive numbers of missing values
+# specifically, all companies from South Africa are missing for tobin's q
+reg_data %>% select(-c(listing_age))
+
+# summarize data
+lapply(reg_data, summary)
+
+```
+
+```{r tab1: descriptive statistics, echo=F}
+
+reg_data %>% 
+  set_variable_labels(
+    listing_age = 'Listing age',
+    incorp_age = 'Incorporation age',
+    lag_return_on_assets = 'Return on assets',
+    lag_return_on_equity = 'Return on equity',
+    reporting_year = 'Report year',
+    pca_score = 'PCA score',
+    social_committee = 'Has social/ethics committee'
+  ) %>% 
+  set_value_labels(
+    social_committee = c(Yes = 1, No = 0)
+  ) %>% 
+  tbl_summary(by = social_committee, missing = 'no') %>%
+  add_p -> sumtable
+  
+sumtable %>% 
+  as_hux_table %>% 
+  insert_row('', 'Has Social and Ethics Committee', '', '', after = 0) %>%
+  merge_cells(1, 2:3) %>%
+  set_header_rows(1:2, TRUE) %>% 
+  style_headers(bold = TRUE, text_color = "grey40") %>% 
+  set_caption('Descriptive Statistics') %>% 
+  theme_article()
+
+```
+
+```{r model formulas, include=F}
+
+#names(reg_data)
+indep_vars <- c('lag_return_on_assets', 'lag_return_on_equity')
+covs <- 'reporting_year + Country + Sector + incorp_age + social_committee'
+non_lin_terms <- sapply(indep_vars, function(x) paste0( x, ' + I(', 
+                                                        x, '**2)', ' + I(', 
+                                                        x, '**3)'))
+inter_terms <- sapply(indep_vars, function(x) 
+  paste0( '(', x, ' + I(', x, '**2)', ' + I(', x, '**3))*social_committee'))
+int_adj_terms <- 
+  sapply(non_lin_terms, 
+         function(x) paste0('(', x, ' + ', covs, ')', '*social_committee'))
+
+unadj_models <- paste('pca_score', indep_vars, sep = ' ~ ')
+adj_models <- paste(unadj_models, covs, sep = ' + ')
+
+non_lin_unadj_models <- paste('pca_score', non_lin_terms, sep = ' ~ ')
+non_lin_adj_models <- paste(non_lin_unadj_models, covs, sep = ' + ')
+
+inter_unadj_models <- paste('pca_score', paste0(inter_terms), sep = ' ~ ')
+inter_adj_models <- paste('pca_score', int_adj_terms, sep = ' ~ ')
+
+models <- c(unadj_models, adj_models, non_lin_unadj_models, 
+            non_lin_adj_models, inter_unadj_models, inter_adj_models)
+
+```
+
+```{r fit models, include=F}
+
+model_fits <- lapply(models, lm, data = reg_data)
+fits <- lapply(model_fits, function(x) coeftest(x, vcov = vcovHC(x, type="HC1")))
+
+```
+
+```{r tab2: linear models, echo=F}
+
+lab <- c(
+  "Return on assets" = "lag_return_on_assets",
+  "Return on equity" = "lag_return_on_equity",
+  "Reporting year : 2015" = "reporting_year2015",
+  "Reporting year : 2016" = "reporting_year2016",
+  "Reporting year : 2017" = "reporting_year2017",
+  "Reporting year : 2018" = "reporting_year2018",
+  "Country: Ghana" = "CountryGhana",
+  "Country: Kenya" = "CountryKenya",
+  "Country: Mauritius" = "CountryMauritius",
+  "Country: Nigeria" = "CountryNigeria",
+  "Country: South Africa" = "CountrySouth Africa", 
+  "Sector: Secondary" = "SectorSecondary", 
+  "Sector: Secondary" = "SectorTertiary", 
+  "Incorporation age" = "incorp_age", 
+  "Social committee" = "social_committee1"
+)
+
+
+huxreg(fits[1:4],
+       error_pos = 'right', ci_level = .95, error_format = "({conf.low}, {conf.high})", number_format = 3, 
+       statistics = c('nobs', 'AIC'), coefs = lab) %>% 
+  set_contents(1, 2:9, c(rep('Unadjusted', 4), rep('Adjusted', 4))) %>% 
+  set_col_width(c(.2, rep(.1, 8))) %>%
+  set_header_rows(1, TRUE) %>% 
+  style_headers(bold = TRUE, text_color = "grey40") %>% 
+  set_caption('Linear models') %>% 
+  merge_cells(row = 1, col = c(2, 3)) %>% 
+  merge_cells(row = 1, col = c(4, 5)) %>% 
+  merge_cells(row = 1, col = c(6, 7)) %>% 
+  merge_cells(row = 1, col = c(8, 9)) %>% 
+  theme_article()
+
+```
+
+```{r non-linear models, echo=F}
+
+lab <- c(
+  "Return on assets" = "lag_return_on_assets",
+  "ROA**2" = "I(lag_return_on_assets^2)",
+  "ROA**3" = "I(lag_return_on_assets^3)",
+  "Return on equity" = "lag_return_on_equity",
+  "ROE**2" = "I(lag_return_on_equity^2)",
+  "ROE**3" = "I(lag_return_on_equity^3)",
+  "Reporting year : 2015" = "reporting_year2015",
+  "Reporting year : 2016" = "reporting_year2016",
+  "Reporting year : 2017" = "reporting_year2017",
+  "Reporting year : 2018" = "reporting_year2018",
+  "Country: Ghana" = "CountryGhana",
+  "Country: Kenya" = "CountryKenya",
+  "Country: Mauritius" = "CountryMauritius",
+  "Country: Nigeria" = "CountryNigeria",
+  "Country: South Africa" = "CountrySouth Africa", 
+  "Sector: Secondary" = "SectorSecondary", 
+  "Sector: Secondary" = "SectorTertiary", 
+  "Incorporation age" = "incorp_age", 
+  "Social committee" = "social_committee1"
+)
+
+
+huxreg(fits[5:8],
+       error_pos = 'right', ci_level = .95, error_format = "({conf.low}, {conf.high})", number_format = 3, 
+       statistics = c('nobs', 'AIC'), coefs = lab) %>% 
+  set_contents(1, 2:9, c(rep('Unadjusted', 4), rep('Adjusted', 4))) %>% 
+  set_col_width(c(.2, rep(.1, 8))) %>%
+  set_header_rows(1, TRUE) %>% 
+  style_headers(bold = TRUE, text_color = "grey40") %>% 
+  set_caption('Non-linear models') %>% 
+  merge_cells(row = 1, col = c(2, 3)) %>% 
+  merge_cells(row = 1, col = c(4, 5)) %>% 
+  merge_cells(row = 1, col = c(6, 7)) %>% 
+  merge_cells(row = 1, col = c(8, 9)) %>% 
+  theme_article() %>% 
+  add_footnote('Adjusted models are adjusted for country and year fixed-effects terms, industrial sector, incoporation year and presence of a social and ethics committee')
+
+```
+
+```{r non-linear interaction models, echo=F}
+
+lab <- c(
+  "Return on assets" = "lag_return_on_assets",
+  "ROA**2" = "I(lag_return_on_assets^2)",
+  "ROA**3" = "I(lag_return_on_assets^3)",
+  "Return on equity" = "lag_return_on_equity",
+  "ROE**2" = "I(lag_return_on_equity^2)",
+  "ROE**3" = "I(lag_return_on_equity^3)",
+  "ROE x SC" = "lag_return_on_equity:social_committee1",
+  "ROA x SC" = "lag_return_on_assets:social_committee1"
+)
+
+huxreg(fits[9:12],
+       error_pos = 'right', ci_level = .95, error_format = "({conf.low}, {conf.high})", number_format = 3, 
+       statistics = c("N" = "nobs"), coefs = lab) %>% 
+  set_contents(1, 2:9, c(rep('Unadjusted', 4), rep('Adjusted', 4))) %>% 
+  set_col_width(c(.2, rep(.1, 8))) %>%
+  set_header_rows(1, TRUE) %>% 
+  style_headers(bold = TRUE, text_color = "grey40") %>% 
+  set_caption('Non-linear models') %>% 
+  merge_cells(row = 1, col = c(2, 3)) %>% 
+  merge_cells(row = 1, col = c(4, 5)) %>% 
+  merge_cells(row = 1, col = c(6, 7)) %>% 
+  merge_cells(row = 1, col = c(8, 9)) %>% 
+  theme_article() %>% 
+  add_footnote('Models include interaction terms between SC and all other adjustment variables. 
+  Adjusted models are adjusted for country and year fixed-effects terms, industrial sector, 
+  incoporation year and presence of a social and ethics committee')
+
+
+```
+
+```{r likelihood ratio tests, echo=F}
+
+data.frame(
+  `Models to compare` = c('Non-linear unadjusted vs. linear unadjusted (ROA)', 
+                          'Non-linear unadjusted vs. linear unadjusted (ROE)', 
+                          'Non-linear adjusted vs. linear adjusted (ROA)', 
+                          'Non-linear adjusted vs. linear adjusted (ROE)',
+                          'Unadjusted interaction vs. non-linear unadjusted (ROA)', 
+                          'Unadjusted interaction vs. non-linear unadjusted (ROE)', 
+                          'Adjusted interaction vs. non-linear adjusted (ROA)', 
+                          'Adjusted interaction vs. non-linear adjusted (ROE)'),
+                          
+  'p-values' = c(
+    lrtest(model_fits[[5]], model_fits[[1]])[['Pr(>Chisq)']][[2]],
+    lrtest(model_fits[[6]], model_fits[[2]])[['Pr(>Chisq)']][[2]],
+    lrtest(model_fits[[7]], model_fits[[3]])[['Pr(>Chisq)']][[2]],
+    lrtest(model_fits[[8]], model_fits[[4]])[['Pr(>Chisq)']][[2]],
+    lrtest(model_fits[[9]], model_fits[[5]])[['Pr(>Chisq)']][[2]],
+    lrtest(model_fits[[10]], model_fits[[6]])[['Pr(>Chisq)']][[2]],
+    lrtest(model_fits[[11]], model_fits[[7]])[['Pr(>Chisq)']][[2]],
+    lrtest(model_fits[[12]], model_fits[[8]])[['Pr(>Chisq)']][[2]])
+  ) %>% 
+  data.frame %>% 
+  hux %>% 
+  set_header_rows(1, TRUE) %>% 
+  style_headers(bold = TRUE, text_color = "grey40") %>% 
+  theme_article()
+
+```
+
+```{r prep models for plotting, echo=F}
+
+non_lin_models <- model_fits[c(5, 6, 9, 10)]
+aug_models <- lapply(non_lin_models, broom::augment)
+
+model_names <- c('roa_nonlin', 'roe_nonlin', 'roa_inter', 'roe_inter')
+names(aug_models) <- model_names
+model_vars <- c('lag_return_on_assets', 'lag_return_on_equity', 'lag_return_on_assets', 'lag_return_on_equity')
+
+```
+
+```{r fig1: plot non-linear ROA, fig.cap='Non-linearity in CSR score across range of return on assets', echo=F}
+
+ggplot(aug_models[['roa_nonlin']], aes(x = lag_return_on_assets, y = .fitted)) + 
+  geom_point(color = 'blue') + geom_line() + 
+  geom_point(aes(x = lag_return_on_assets, y = pca_score), color = 'red',  alpha = .1) +
+  labs(x = "Return on assets", y = "CSR score")
+
+```
+
+```{r fig2: plot non-linear ROE, fig.cap='Non-linearity in CSR score across range of return on equity', echo=F}
+
+ggplot(aug_models[['roe_nonlin']], aes(x = lag_return_on_equity, y = .fitted)) + 
+  geom_point(color = 'blue') + geom_line() + 
+  geom_point(aes(x = lag_return_on_equity, y = pca_score), color = 'red', alpha = .1) +
+  labs(x = "Return on assets", y = "CSR score")
+
+```
+
+```{r fig3: plot non-linear ROA by SC, fig.cap='Non-linearity in CSR score across range of return on assets by existence of social committee', echo=F}
+
+ggplot(aug_models[['roa_inter']], aes(x = lag_return_on_assets, y = .fitted, color = social_committee)) + 
+  geom_point() + geom_line() + 
+  geom_point(aes(x = lag_return_on_assets, y = pca_score, color = social_committee), alpha = .1) +
+  labs(x = "Return on assets", y = "CSR score")
+
+```
+
+```{r fig4: plot non-linear ROE by SC, fig.cap='Non-linearity in CSR score across range of return on equity by existence of social committee', echo=F}
+
+ggplot(aug_models[['roe_inter']], 
+       aes(x = lag_return_on_equity, y = .fitted, color = social_committee)) + 
+  geom_point() + geom_line() + 
+  geom_point(aes(x = lag_return_on_equity, y = pca_score, 
+                 color = social_committee),  alpha = .1) +
+  labs(x = "Return on equity", y = "CSR score")
+
+```
+
+## Discussion
+
+- Summary of results
+
+- Interpretation of results
+
+- Results in the context of existing literature
+
+- Implications of results
+
+-- Literature
+-- Policy
+-- Practice
+
+- Limitations
+
+- Future directions
+
+## Conclusion
